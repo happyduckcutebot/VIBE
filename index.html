@@ -618,11 +618,13 @@
 
 
 
+
     .floating-survey-button {
       position: fixed;
       right: 1.2rem;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 1.2rem;
+      top: auto;
+      transform: none;
       z-index: 999;
       display: inline-flex;
       align-items: center;
@@ -643,7 +645,7 @@
     }
 
     .floating-survey-button:hover {
-      transform: translateY(-50%) translateX(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 22px 48px rgba(84, 35, 210, 0.42);
     }
 
@@ -665,6 +667,7 @@
         transform: translateY(-2px);
       }
     }
+
 
 
     footer {
