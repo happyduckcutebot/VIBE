@@ -616,6 +616,61 @@
       }
     }
 
+
+    .floating-survey-button {
+      position: fixed;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      min-height: 160px;
+      padding: 1rem 0.85rem;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      text-decoration: none;
+      font-weight: 950;
+      letter-spacing: 0.02em;
+      box-shadow: 0 18px 42px rgba(84, 35, 210, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .floating-survey-button:hover {
+      transform: translateY(-50%) translateX(-3px);
+      box-shadow: 0 22px 48px rgba(84, 35, 210, 0.42);
+    }
+
+    .floating-survey-button span {
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+
+    @media (max-width: 700px) {
+      .floating-survey-button {
+        right: 1rem;
+        bottom: 1rem;
+        top: auto;
+        transform: none;
+        writing-mode: horizontal-tb;
+        min-height: auto;
+        padding: 0.85rem 1rem;
+        border-radius: 999px;
+      }
+
+      .floating-survey-button:hover {
+        transform: translateY(-2px);
+      }
+    }
+
     footer {
       text-align: center;
       padding: 2.5rem 1.25rem;
@@ -673,6 +728,12 @@
 </head>
 
 <body>
+
+  <a class="floating-survey-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdx_xJz5q3JZ4wYq-2eB6KAOzwamCJBrEhyogLwyJJ6sJbQnQ/viewform?usp=dialog" target="_blank" rel="noopener" aria-label="Take the VIBE interest survey">
+    <span>✦</span>
+    Take Survey
+  </a>
+
   <header>
     <div class="nav">
       <a class="brand" href="#top">
@@ -688,6 +749,7 @@
         <a href="#activities">Activities</a>
         <a href="#goals">Goals</a>
         <a href="#students">Students</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx_xJz5q3JZ4wYq-2eB6KAOzwamCJBrEhyogLwyJJ6sJbQnQ/viewform?usp=dialog" target="_blank" rel="noopener">Survey</a>
         <a href="#next">Next Steps</a>
       </nav>
     </div>
@@ -1126,28 +1188,6 @@
       </div>
     </section>
   </main>
-
-    <section id="survey">
-      <div class="survey-section">
-        <div class="section-head">
-          <h2>VIBE Interest Survey</h2>
-          <p>Please share a little about your background, experience, interests, and possible leadership interests.</p>
-        </div>
-
-        <div style="overflow: hidden; border-radius: 24px; border: 1px solid var(--border); background: #fff;">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdx_xJz5q3JZ4wYq-2eB6KAOzwamCJBrEhyogLwyJJ6sJbQnQ/viewform?embedded=true"
-            width="100%"
-            height="1250"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading…
-          </iframe>
-        </div>
-      </div>
-    </section>
-
 <footer>
     <strong>VIBE — Ventures in Business Engineering</strong><br />
     Code with AI. Build for business.
