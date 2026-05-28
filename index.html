@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Website Name</title>
-  <meta name="description" content="A professional one-page website built for GitHub Pages." />
+  <title>VIBE Club | Ventures in Business Engineering</title>
+  <meta name="description" content="VIBE Club is an AI-assisted coding and applied business technology club for students with an entrepreneurial mindset." />
 
   <style>
     :root {
-      --primary: #1f3a5f;
-      --secondary: #2f80ed;
-      --background: #f7f9fc;
-      --text: #1f2937;
-      --muted: #6b7280;
+      --navy: #102a43;
+      --blue: #2563eb;
+      --cyan: #06b6d4;
+      --green: #10b981;
+      --orange: #f59e0b;
+      --purple: #7c3aed;
+      --bg: #f8fafc;
       --card: #ffffff;
-      --border: #e5e7eb;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --soft-blue: #eff6ff;
+      --soft-cyan: #ecfeff;
+      --soft-green: #ecfdf5;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
     }
 
     * {
@@ -23,211 +31,604 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: var(--background);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 34rem),
+        radial-gradient(circle at top right, rgba(6, 182, 212, 0.12), transparent 32rem),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
     }
 
     header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.25rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       text-decoration: none;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+    }
+
+    .brand small {
+      display: block;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0;
+      margin-top: -0.2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+      font-size: 0.92rem;
+      font-weight: 650;
+      color: #334155;
     }
 
     nav a {
-      margin-left: 1.25rem;
-      color: var(--text);
       text-decoration: none;
-      font-size: 0.95rem;
+      transition: color 0.15s ease;
     }
 
     nav a:hover {
-      color: var(--secondary);
+      color: var(--blue);
     }
 
     .hero {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 5rem 1.5rem 4rem;
+      padding: 5.25rem 1.25rem 3.5rem;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
       gap: 3rem;
       align-items: center;
     }
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      line-height: 1.1;
-      color: var(--primary);
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      background: rgba(239, 246, 255, 0.9);
+      color: #1d4ed8;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 750;
       margin-bottom: 1.25rem;
     }
 
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      max-width: 620px;
+    .hero h1 {
+      font-size: clamp(2.65rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      color: var(--navy);
+      margin-bottom: 1.4rem;
     }
 
-    .button-row {
+    .hero h1 span {
+      background: linear-gradient(120deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.12rem, 2vw, 1.35rem);
+      color: #475569;
+      max-width: 700px;
+      margin-bottom: 1.7rem;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 1.7rem;
+    }
+
+    .cta-row {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2rem;
     }
 
     .button {
-      display: inline-block;
-      padding: 0.85rem 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.75rem 1.15rem;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      font-weight: 800;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(31, 58, 95, 0.15);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
     }
 
     .button-primary {
-      background: var(--secondary);
       color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
     }
 
     .button-secondary {
+      color: var(--navy);
       background: white;
-      color: var(--primary);
       border: 1px solid var(--border);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .pill {
+      padding: 0.42rem 0.75rem;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--border);
+      color: #334155;
+      font-weight: 800;
+      font-size: 0.85rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
     }
 
     .hero-card {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0f172a, #1e3a8a 58%, #0891b2);
       color: white;
+      border-radius: 32px;
       padding: 2rem;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(31, 58, 95, 0.18);
+      box-shadow: 0 30px 75px rgba(15, 23, 42, 0.28);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -35% -20% auto auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .hero-card h2 {
+      position: relative;
+      font-size: 1.55rem;
       margin-bottom: 1rem;
-      font-size: 1.4rem;
+      letter-spacing: -0.03em;
     }
 
-    .hero-card ul {
-      list-style-position: inside;
+    .prompt-flow {
+      position: relative;
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
     }
 
-    .hero-card li {
-      margin-bottom: 0.65rem;
+    .flow-step {
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 1rem;
+      border-radius: 18px;
+      font-weight: 850;
+    }
+
+    .hero-card p {
+      position: relative;
+      color: #dbeafe;
     }
 
     section {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 4rem 1.5rem;
+      padding: 4.25rem 1.25rem;
     }
 
-    .section-title {
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading.center {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .section-title h2 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 0.45rem;
     }
 
-    .section-title p {
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading p {
       color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto;
+      font-size: 1.1rem;
     }
 
-    .cards {
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
     }
 
     .card {
-      background: var(--card);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 24px rgba(31, 58, 95, 0.06);
+      border-radius: 24px;
+      padding: 1.45rem;
+      box-shadow: var(--shadow);
     }
 
     .card h3 {
-      color: var(--primary);
-      margin-bottom: 0.75rem;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.025em;
+      font-size: 1.18rem;
     }
 
     .card p {
       color: var(--muted);
-      font-size: 0.98rem;
     }
 
-    .about {
-      background: var(--card);
+    .card ul {
+      padding-left: 1.25rem;
+      color: #475569;
+    }
+
+    .card li {
+      margin: 0.45rem 0;
+    }
+
+    .highlight {
+      background: linear-gradient(145deg, var(--soft-blue), #fff);
+      border-color: rgba(37, 99, 235, 0.16);
+    }
+
+    .quote-card {
+      background: var(--navy);
+      color: white;
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
+    }
+
+    .quote-card h3 {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .quote-card p {
+      color: #cbd5e1;
+      font-size: 1.08rem;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .profile {
+      background: linear-gradient(145deg, #eff6ff, #ecfeff);
+      border-radius: 28px;
+      padding: 2rem;
+      border: 1px solid rgba(37, 99, 235, 0.12);
+    }
+
+    .profile .avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.25);
+    }
+
+    .activity {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .activity-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 1rem;
+      align-items: start;
+      background: white;
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 8px 24px rgba(31, 58, 95, 0.06);
+      padding: 1.2rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
     }
 
-    .contact {
-      text-align: center;
-      background: var(--primary);
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--soft-blue);
+      color: var(--blue);
+      font-size: 1.4rem;
+    }
+
+    .activity-card:nth-child(2) .icon,
+    .activity-card:nth-child(5) .icon {
+      background: var(--soft-cyan);
+      color: #0891b2;
+    }
+
+    .activity-card:nth-child(3) .icon,
+    .activity-card:nth-child(6) .icon {
+      background: var(--soft-green);
+      color: #059669;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin: 2rem 0;
+    }
+
+    .timeline-step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.2rem;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .timeline-step strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-step span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .goals {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .goal-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       color: white;
-      border-radius: 24px;
-      padding: 3rem 2rem;
+      border-radius: 28px;
+      padding: 1.35rem;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
     }
 
-    .contact p {
+    .goal-card::after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      bottom: -45px;
+      width: 130px;
+      height: 130px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+    }
+
+    .goal-card h3,
+    .goal-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .goal-card h3 {
+      font-size: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .goal-card p {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .goal-blue { background: linear-gradient(145deg, #1d4ed8, #0891b2); }
+    .goal-green { background: linear-gradient(145deg, #047857, #10b981); }
+    .goal-purple { background: linear-gradient(145deg, #6d28d9, #2563eb); }
+    .goal-orange { background: linear-gradient(145deg, #b45309, #f59e0b); }
+
+    .student-benefits {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .next-steps {
+      background: linear-gradient(145deg, #0f172a, #1e40af);
+      color: white;
+      border-radius: 34px;
+      padding: 2.3rem;
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.24);
+    }
+
+    .next-steps h2 {
+      color: white;
+    }
+
+    .next-steps p {
       color: #dbeafe;
-      margin-bottom: 1.5rem;
+    }
+
+    .role-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .role {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 1rem;
+      color: #eff6ff;
+      font-size: 0.94rem;
+    }
+
+    .role strong {
+      display: block;
+      color: white;
+      margin-bottom: 0.4rem;
+    }
+
+    .question {
+      margin-top: 1.5rem;
+      padding: 1rem 1.15rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: white;
+      font-weight: 850;
     }
 
     footer {
       text-align: center;
       color: var(--muted);
-      padding: 2rem 1.5rem;
-      font-size: 0.9rem;
+      padding: 2.5rem 1.25rem;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 3.5rem;
-      }
-
-      .cards {
+    @media (max-width: 980px) {
+      .hero,
+      .about-card,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .goals,
+      .timeline,
+      .role-list {
         grid-template-columns: 1fr;
       }
 
       nav {
         display: none;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-card {
+        border-radius: 24px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand small {
+        display: none;
+      }
+
+      section {
+        padding: 3.2rem 1rem;
+      }
+
+      .hero {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .activity-card {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -236,91 +637,438 @@
 <body>
   <header>
     <div class="nav">
-      <a class="logo" href="#">Your Website Name</a>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <a class="brand" href="#top" aria-label="VIBE Club homepage">
+        <span class="brand-mark">VIBE</span>
+        <span>
+          VIBE Club
+          <small>Ventures in Business Engineering</small>
+        </span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about-vibe">What is VIBE?</a>
+        <a href="#activities">Activities</a>
+        <a href="#goals">Goals</a>
+        <a href="#students">For Students</a>
+        <a href="#next">Next Steps</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div>
-        <h1>Build something meaningful online.</h1>
-        <p>
-          This is a clean, professional starter website that you can upload directly to GitHub Pages.
-          Replace this text with your own business, project, club, or personal website description.
+        <div class="eyebrow">Initial interest meeting · June 2026</div>
+        <h1>Code with AI. <span>Build for business.</span></h1>
+        <p class="subtitle">
+          VIBE — Ventures in Business Engineering — is an AI-assisted coding and applied business technology club
+          for students with an entrepreneurial mindset.
         </p>
-        <div class="button-row">
-          <a class="button button-primary" href="#contact">Get Started</a>
-          <a class="button button-secondary" href="#services">Learn More</a>
+        <p class="tagline">From prompts → projects → portfolio-ready experience</p>
+
+        <div class="cta-row">
+          <a class="button button-primary" href="#next">Help Launch VIBE</a>
+          <a class="button button-secondary" href="#activities">Explore Project Ideas</a>
+        </div>
+
+        <div class="pill-row" aria-label="Club values">
+          <span class="pill">Low Barrier</span>
+          <span class="pill">AI-First</span>
+          <span class="pill">Real Projects</span>
+          <span class="pill">Student-Led</span>
         </div>
       </div>
 
-      <div class="hero-card">
-        <h2>What this site includes</h2>
-        <ul>
-          <li>Responsive design for phones and computers</li>
-          <li>Simple navigation menu</li>
-          <li>Services, about, and contact sections</li>
-          <li>No external dependencies</li>
-        </ul>
-      </div>
+      <aside class="hero-card">
+        <h2>What VIBE is about</h2>
+        <p>
+          Business students can become builders — not just users — when AI lowers the coding barrier.
+          VIBE helps students turn business questions into working tools.
+        </p>
+        <div class="prompt-flow">
+          <div class="flow-step">1. Start with curiosity</div>
+          <div class="flow-step">2. Use AI to build</div>
+          <div class="flow-step">3. Create useful tools</div>
+          <div class="flow-step">4. Show real results</div>
+        </div>
+      </aside>
     </section>
 
-    <section id="services">
-      <div class="section-title">
-        <h2>Services</h2>
-        <p>Describe what you offer. You can change these three cards to match your actual project.</p>
+    <section id="about-vibe">
+      <div class="section-heading center">
+        <div class="section-kicker">What is the VIBE Club?</div>
+        <h2>A student-led applied AI and business technology community.</h2>
+        <p>
+          VIBE is not a traditional coding club. It is a low-entry learning community where curiosity matters
+          more than prior coding experience.
+        </p>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Website Design</h3>
-          <p>Create attractive and easy-to-use websites for individuals, businesses, or organizations.</p>
-        </div>
-
-        <div class="card">
-          <h3>Publishing Support</h3>
-          <p>Help clients prepare, organize, and publish their work online with a professional presentation.</p>
-        </div>
-
-        <div class="card">
-          <h3>Marketing Materials</h3>
-          <p>Develop landing pages, announcements, and digital content that communicate clearly.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="about">
-        <div class="section-title">
-          <h2>About</h2>
+      <div class="grid-3">
+        <article class="card highlight">
+          <h3>AI-assisted problem solving</h3>
           <p>
-            Write a short paragraph about your background, mission, or organization.
+            A place where business students use AI-assisted coding to solve real problems in business,
+            finance, entrepreneurship, marketing, operations, and analytics.
+          </p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Low-entry learning</h3>
+          <p>
+            Students do not need to arrive as expert programmers. The club provides a supportive environment
+            for asking basic questions, experimenting, and learning with peers.
+          </p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Project platform</h3>
+          <p>
+            VIBE supports websites, apps, dashboards, data tools, trading bots, AI workflows, and prototypes
+            that students can show in interviews and internships.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faculty">
+      <div class="about-card">
+        <div class="profile">
+          <div class="avatar">WZ</div>
+          <div class="section-kicker">Faculty support</div>
+          <h2>About Prof. Will Zhang</h2>
+          <p>
+            I am excited to help launch VIBE because AI-assisted building can give students a practical way
+            to turn ideas into tools, portfolios, and career-ready experience.
           </p>
         </div>
-        <p>
-          This website is intentionally simple so it is easy to edit. Open this file in any text editor,
-          change the words, colors, and sections, and then upload it to a GitHub repository named
-          <strong>yourusername.github.io</strong> or publish it through GitHub Pages.
-        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Faculty role</h3>
+            <ul>
+              <li>Assistant Professor of Finance at Opus College of Business.</li>
+              <li>Research specialty in financial market structure, financial technology, and large datasets.</li>
+              <li>Faculty lead of the undergraduate certificate in financial technology.</li>
+              <li>10+ years of experience with Python, SAS, and Stata.</li>
+              <li>Winner of the 2026 Opus Faculty Research Award.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Student connections</h3>
+            <ul>
+              <li>Faculty advisor for Finance Club and Scholars of Finance Club.</li>
+              <li>Completed two student research projects sponsored by UROP.</li>
+              <li>Three more student research projects planned for this summer and fall.</li>
+              <li>Excited to help students build things they can show in interviews.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>What faculty support can provide</h3>
+            <ul>
+              <li>Project ideas at the intersection of AI, finance, data, and business practice.</li>
+              <li>Connections to student clubs, faculty, alumni, and external partners.</li>
+              <li>Guidance on responsible, rigorous, and useful AI-assisted work.</li>
+              <li>Research-based market and high-frequency trading data.</li>
+            </ul>
+          </article>
+
+          <article class="quote-card">
+            <h3>Core belief</h3>
+            <p>
+              The club helps students move from “I have an idea” to “I built a first version.”
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="contact">
-        <h2>Ready to connect?</h2>
-        <p>Replace this with your preferred contact method.</p>
-        <a class="button button-primary" href="mailto:your.email@example.com">Email Me</a>
+    <section id="why">
+      <div class="section-heading">
+        <div class="section-kicker">Why a student club?</div>
+        <h2>A supportive bridge from interest to execution.</h2>
+        <p>
+          AI is changing business work quickly. Many students want to learn, but coding can feel intimidating,
+          and class time alone is not enough for open-ended projects.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>The challenge</h3>
+          <ul>
+            <li>AI is changing business work quickly.</li>
+            <li>Many students want to learn, but coding feels intimidating.</li>
+            <li>Class time alone is not enough for open-ended projects.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>The support</h3>
+          <ul>
+            <li>Peer learning and student leadership.</li>
+            <li>Beginner-friendly workshops using AI tools.</li>
+            <li>A safe place to ask “basic” questions and experiment.</li>
+            <li>Funding support for pro subscriptions and hardware.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>The bridge</h3>
+          <ul>
+            <li>Turn ideas into usable websites, apps, dashboards, and data tools.</li>
+            <li>Connect student clubs, entrepreneurs, faculty, alumni, and firms.</li>
+            <li>Create visible results students can talk about and show.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="section-heading center">
+        <div class="section-kicker">Potential activities</div>
+        <h2>Build ideas, solve real needs, and create useful tools.</h2>
+        <p>
+          VIBE can support member-driven projects, real-world collaborations, Opus and student club projects,
+          finance and data work, and a living dataset on AI adoption.
+        </p>
+      </div>
+
+      <div class="activity">
+        <article class="activity-card">
+          <div class="icon">💡</div>
+          <div>
+            <h3>Build your own ideas</h3>
+            <p>
+              Members can bring ideas for apps, websites, dashboards, trading bots, data tools, or AI workflows.
+              VIBE helps students find teammates with complementary skills in business, design, coding, data,
+              and communication.
+            </p>
+            <ul>
+              <li>Low-pressure space to test ideas before they are polished.</li>
+              <li>Project scoping, starter templates, peer feedback, and faculty guidance.</li>
+              <li>Portfolio-ready outputs for interviews and internships.</li>
+              <li>Paid AI tools and hardware.</li>
+              <li>Guest speakers from related industries.</li>
+            </ul>
+            <p><strong>Student question:</strong> What have you wanted to build but did not know where to start?</p>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <div class="icon">🤝</div>
+          <div>
+            <h3>Real-world collaborations</h3>
+            <p>
+              VIBE members can help solve real needs for firms, campus groups, alumni, entrepreneurs,
+              nonprofits, and local businesses.
+            </p>
+            <ul>
+              <li><strong>From firms:</strong> automate parts of equity research workflows, scrape public industry sales data or government data, and build dashboards for recurring business questions.</li>
+              <li><strong>From campus:</strong> support departments, faculty, and student clubs with websites and tools; help UBC pitch competition winners turn ideas into apps, websites, or prototypes; analyze survey, event, or student opportunity data.</li>
+              <li><strong>From community:</strong> work with alumni, entrepreneurs, nonprofits, and local businesses; translate messy business needs into manageable student projects; build professional habits: scope, communicate, deliver, and document.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <div class="icon">🏫</div>
+          <div>
+            <h3>Build for Opus and student clubs</h3>
+            <p>
+              VIBE can interact with many clubs and programs instead of operating in isolation.
+            </p>
+            <ul>
+              <li>Build websites for business school events, speaker series, and student programs.</li>
+              <li>Create reusable website templates for clubs and competitions.</li>
+              <li>Develop dashboards for events, opportunities, alumni speakers, and student resources.</li>
+              <li>Use AI to draft event recaps, newsletter blurbs, and social media content for review.</li>
+              <li>Partner with UBC and pitch competitions to help selected winners make ideas more concrete.</li>
+              <li>Support student founders with app prototypes, landing pages, surveys, and simulations.</li>
+              <li>Work with Finance Club, Scholars of Finance, marketing clubs, and analytics groups on shared projects.</li>
+              <li>Invite clubs to bring problems that VIBE students can help solve.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <div class="icon">📈</div>
+          <div>
+            <h3>Finance, data, and trading projects</h3>
+            <p>
+              Project ideas can combine business judgment with technical tools.
+            </p>
+            <ul>
+              <li><strong>Equity research automation:</strong> scrape public industry sales data, pull company filings and financial statements, build dashboards for comparable firms and valuation ratios, and generate first-draft research summaries for human review.</li>
+              <li><strong>SEC EDGAR projects:</strong> use free EDGAR data to scrape 10-K and 10-Q filings; track AI mentions, cybersecurity disclosures, risk factors, or executive compensation; build datasets for class projects or student research.</li>
+              <li><strong>Trading bots and market data:</strong> study technical trading bots students are already using or curious about; build backtesting bots for momentum, moving averages, mean reversion, and pairs trading; evaluate performance, risk, and transaction costs.</li>
+              <li>For selected projects, use proprietary high-frequency trading data from Prof. Zhang’s research.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <div class="icon">🤖</div>
+          <div>
+            <h3>AI adoption and real-world data</h3>
+            <p>
+              The club can create a living dataset on how organizations use AI.
+            </p>
+
+            <div class="timeline">
+              <div class="timeline-step">
+                <strong>Collect</strong>
+                <span>Survey guest speakers, alumni, internship supervisors, and industry partners.</span>
+              </div>
+              <div class="timeline-step">
+                <strong>Analyze</strong>
+                <span>Build dashboards showing AI tools, use cases, skill gaps, and industry differences.</span>
+              </div>
+              <div class="timeline-step">
+                <strong>Teach</strong>
+                <span>Host seminars and hands-on sessions based on real employer needs.</span>
+              </div>
+              <div class="timeline-step">
+                <strong>Improve</strong>
+                <span>Use findings to guide workshops and curriculum conversations.</span>
+              </div>
+            </div>
+
+            <ul>
+              <li>Ask how AI is used in finance, accounting, marketing, operations, and entrepreneurship.</li>
+              <li>Coordinate with other clubs when speakers come to campus.</li>
+              <li>Create an annual student report on AI in business practice.</li>
+              <li>Help students become unusually strong AI users before entering the workforce.</li>
+              <li>Turn student curiosity into institutional insight.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="section-heading center">
+        <div class="section-kicker">Overall goals</div>
+        <h2>Directions, not rigid rules.</h2>
+        <p>
+          The vision is flexible because student leaders will change over time. A successful VIBE Club should
+          create a culture: learn fast, build responsibly, and help others.
+        </p>
+      </div>
+
+      <div class="goals">
+        <article class="goal-card goal-blue">
+          <h3>Applied AI community</h3>
+          <p>Become a recognized place where business students learn, build, and support one another.</p>
+        </article>
+
+        <article class="goal-card goal-green">
+          <h3>Project portfolio</h3>
+          <p>Create useful tools for students, clubs, departments, entrepreneurs, and partners.</p>
+        </article>
+
+        <article class="goal-card goal-purple">
+          <h3>AI-in-business insight</h3>
+          <p>Build a living dataset that helps the school understand changing employer needs.</p>
+        </article>
+
+        <article class="goal-card goal-orange">
+          <h3>Real-world bridge</h3>
+          <p>Connect students with alumni, firms, entrepreneurs, and problems worth solving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="students">
+      <div class="student-benefits">
+        <div class="section-heading center">
+          <div class="section-kicker">How VIBE helps students</div>
+          <h2>Concrete experiences for interviews, internships, and careers.</h2>
+          <p>
+            VIBE helps students build skills, gain experience, and grow a network through real projects.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Skills</h3>
+            <ul>
+              <li>AI-assisted coding and debugging.</li>
+              <li>Data cleaning, visualization, and automation.</li>
+              <li>Websites, apps, dashboards, and prototypes.</li>
+              <li>Market data, SEC data, and business analytics.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Experience</h3>
+            <ul>
+              <li>Result-oriented coding projects.</li>
+              <li>Hands-on work with real stakeholders.</li>
+              <li>Leadership roles and teamwork.</li>
+              <li>Portfolio-ready examples to show employers.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Network</h3>
+            <ul>
+              <li>Interactions with other clubs.</li>
+              <li>Connections with alumni and guest speakers.</li>
+              <li>Potential projects from firms and entrepreneurs.</li>
+              <li>A community of students who build together.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="next-steps">
+        <div class="section-heading">
+          <div class="section-kicker" style="color:#93c5fd;">Next steps</div>
+          <h2>What do we need from you?</h2>
+          <p>
+            The most important outcome today is to identify founding student leaders and decide what VIBE should build first.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.18); color:white;">
+            <h3 style="color:white;">Today</h3>
+            <ul style="color:#dbeafe;">
+              <li>Share your interests: AI, finance, coding, entrepreneurship, marketing, operations, or design.</li>
+              <li>Discuss which projects sound most exciting and realistic.</li>
+              <li>Identify students willing to help lead the launch.</li>
+            </ul>
+          </article>
+
+          <article class="card" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.18); color:white;">
+            <h3 style="color:white;">Founding roles, draft</h3>
+            <p style="color:#dbeafe;">Student leaders can shape these roles as the club develops.</p>
+          </article>
+        </div>
+
+        <div class="role-list">
+          <div class="role"><strong>President / Co-presidents</strong>Overall leadership and coordination.</div>
+          <div class="role"><strong>Project leads</strong>Organize project teams and timelines.</div>
+          <div class="role"><strong>Training leads</strong>Plan beginner workshops and onboarding.</div>
+          <div class="role"><strong>Outreach leads</strong>Connect with clubs, guest speakers, alumni, and partners.</div>
+          <div class="role"><strong>Data leads</strong>Manage surveys, datasets, and dashboards.</div>
+        </div>
+
+        <div class="question">
+          Question for you: What should VIBE build first?
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Your Website Name. All rights reserved.
+    <strong>VIBE — Ventures in Business Engineering</strong><br />
+    Code with AI. Build for business. From prompts → projects → portfolio-ready experience.
   </footer>
 </body>
 </html>
