@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Website Name</title>
+  <meta name="description" content="A professional one-page website built for GitHub Pages." />
+
+  <style>
+    :root {
+      --primary: #1f3a5f;
+      --secondary: #2f80ed;
+      --background: #f7f9fc;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.1;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(31, 58, 95, 0.15);
+    }
+
+    .button-primary {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(31, 58, 95, 0.18);
+    }
+
+    .hero-card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .hero-card ul {
+      list-style-position: inside;
+    }
+
+    .hero-card li {
+      margin-bottom: 0.65rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(31, 58, 95, 0.06);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .about {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(31, 58, 95, 0.06);
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      border-radius: 24px;
+      padding: 3rem 2rem;
+    }
+
+    .contact p {
+      color: #dbeafe;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3.5rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="#">Your Website Name</a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Build something meaningful online.</h1>
+        <p>
+          This is a clean, professional starter website that you can upload directly to GitHub Pages.
+          Replace this text with your own business, project, club, or personal website description.
+        </p>
+        <div class="button-row">
+          <a class="button button-primary" href="#contact">Get Started</a>
+          <a class="button button-secondary" href="#services">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2>What this site includes</h2>
+        <ul>
+          <li>Responsive design for phones and computers</li>
+          <li>Simple navigation menu</li>
+          <li>Services, about, and contact sections</li>
+          <li>No external dependencies</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>Describe what you offer. You can change these three cards to match your actual project.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Website Design</h3>
+          <p>Create attractive and easy-to-use websites for individuals, businesses, or organizations.</p>
+        </div>
+
+        <div class="card">
+          <h3>Publishing Support</h3>
+          <p>Help clients prepare, organize, and publish their work online with a professional presentation.</p>
+        </div>
+
+        <div class="card">
+          <h3>Marketing Materials</h3>
+          <p>Develop landing pages, announcements, and digital content that communicate clearly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>
+            Write a short paragraph about your background, mission, or organization.
+          </p>
+        </div>
+        <p>
+          This website is intentionally simple so it is easy to edit. Open this file in any text editor,
+          change the words, colors, and sections, and then upload it to a GitHub repository named
+          <strong>yourusername.github.io</strong> or publish it through GitHub Pages.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Ready to connect?</h2>
+        <p>Replace this with your preferred contact method.</p>
+        <a class="button button-primary" href="mailto:your.email@example.com">Email Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Your Website Name. All rights reserved.
+  </footer>
+</body>
+</html>
